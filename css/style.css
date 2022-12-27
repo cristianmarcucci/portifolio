@@ -28,9 +28,9 @@ html{
 }
 
 /*Mobile*/
-@media only screen and (max-width: 480px){}
+/*@media only screen and (max-width: 480px){}*/
 /*Tablet*/
-@media only screen and (max-width: 768px){}
+/*@media only screen and (max-width: 768px){}*/
 /*Desktop*/
 @media only screen and (min-width: 769px){
 
