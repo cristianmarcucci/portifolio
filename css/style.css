@@ -1,0 +1,298 @@
+@charset "UTF-8";
+
+:root{
+    --background:#202125;
+    --chart:#27282C;
+    --topdark:#2A2B30;
+    --writing:#fffffe;
+    --secondary: #787884;
+    --highlight: #0B7285;
+    --details: #D45333;
+    --darker: #1C1B1B;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url(../src/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+* {
+    color: var(--writing);
+    font-family: 'Inter', helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    background-color: var(--background);
+}
+
+/*Mobile*/
+@media only screen and (max-width: 480px){}
+/*Tablet*/
+@media only screen and (max-width: 768px){}
+/*Desktop*/
+@media only screen and (min-width: 769px){
+
+    nav{
+        display: flex;
+        flex-direction: row;       
+        justify-content: space-around;
+        padding: 1rem;
+        width: 100%;        
+        font-weight: bold;
+        background-color: var(--darker);
+    }
+
+    nav div{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+
+    nav .nav-brand{
+        font-size: 1.3rem;
+    }
+
+    nav ul{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    nav a{
+        text-decoration: none;
+    }
+
+    nav a:hover{
+        color: var(--highlight);
+    }
+
+    header{
+        max-width: fit-content;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 5rem;
+        margin: auto;
+        padding: 5rem;
+
+        background-image: radial-gradient(var(--topdark), var(--background) 60%);
+    }
+
+    header div{ 
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    header div h2{ 
+        color: var(--highlight); 
+        
+    }
+
+    main{
+        max-width: 900px;
+        margin: auto;
+    }
+
+    main h2{
+        margin-bottom: 2rem;
+    }
+
+    main h2::after{
+        content: "";
+        display: block;
+        width: 25%;
+        height: 2px;
+        border-bottom: 1px solid var(--writing);
+    }
+
+    section{
+        padding: 10px;
+        margin-bottom: 2.5rem;
+    }
+
+    .about-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .profile{
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        align-items: center;
+        margin: 2.5rem;
+    }
+
+    .profile img{
+        max-width: 200px;
+        padding: 3px;
+        border: 1px solid var(--highlight);
+        border-radius: 50%;
+    }
+
+    .profile a{
+        text-decoration: none;
+        background-color: var(--highlight);
+        padding: 0.5rem 1rem;
+        margin: 1rem;
+        border-radius: 5px;
+    }
+
+    .skills{
+        max-width: 900px;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 50px;
+    }
+
+    .skills img{
+        max-width: 45px;
+    }
+
+    #about h3{
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    main a{
+        text-decoration: none;
+        border: unset;
+        z-index: 1;
+        position: relative;
+        background-color: var(--highlight);
+        padding: 0.5rem 1rem;
+        margin: 1rem;
+        border-radius: 5px;
+        transition: all 250ms;
+        overflow: hidden;
+    }
+
+    main a::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0;
+        background-color: var(--writing);
+        z-index: -1;
+        box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+        transition: all 250ms
+    }
+
+    main a:hover {
+        color: var(--highlight);
+       }
+       
+    main a:hover::before {
+        width: 100%;
+    }
+
+    .about-text{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .courses-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .card img{
+        display: block;
+        margin: auto;
+        padding: 3px;
+        border: 1px solid var(--highlight);
+        border-radius: 50%;
+    }
+
+    .card{
+        max-width: 180px;
+        background-color: var(--chart);
+        border-radius: 10px;
+        padding: 2rem;
+
+        display: grid;
+        grid-template-rows: 1fr 0.5fr 1fr;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+
+        box-shadow: -25px 25px 4px #1C1B1B;
+    }
+
+    .card h3, .card p, .card a{
+        text-align: center;
+    }
+
+    .commits-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .commit-card{
+        max-width: 200px;
+        grid-template-rows: 1fr 0.3fr 0.5fr 0.5fr;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    .tag-container{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .tag{
+        color: var(--details);
+        font-size: 0.7rem;
+        padding: 0.5rem 1rem;
+        border: 1px solid var(--details);
+        border-radius: 5px;
+    }
+
+    .commit-card img{
+        max-width: 180px;
+        border-radius: 5px;
+    }
+
+    .contact-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+        margin: 1rem;
+    }
+
+    #contact img{
+        max-width: 30px;
+    }
+
+    footer{
+        position: relative;
+        background-color: var(--darker);
+        text-align: center;
+        line-height: 1.5rem;
+        padding: 25px ;
+    }
+
+}
+
+
+
